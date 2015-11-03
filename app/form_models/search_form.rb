@@ -1,3 +1,7 @@
+# So far only found ActiveAttr, https://github.com/cgriego/active_attr 
+# work nicely with SimpleForm :(
+# Reform https://github.com/apotonick/reform looks pretty interesting too.
+
 class SearchForm
   include ActiveAttr::TypecastedAttributes
   include ActiveAttr::BasicModel
@@ -6,6 +10,7 @@ class SearchForm
   attribute :keywords, type: String
   attribute :image_only, type: Boolean, default: false
 
+  # Logic that affect views can be placed here.
   def valid_search?
     !keywords.blank?
   end
