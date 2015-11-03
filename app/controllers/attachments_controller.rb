@@ -6,8 +6,9 @@ class AttachmentsController < ApplicationController
   # upload failure scenario not working :(
   def create
     @form = UploadAttachmentForm.build(params)
-
-    if @form.save
+    service = UploadAttachmentUseCase.new(@form)
+    
+    if service.run
       flash[:notice] = "Attachment saved"
       redirect_to new_attachment_path
     else
