@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get 'search/search_v1'
   get 'search/search_v2'
 
+  resources :attachments, only: [:new, :create]
 end
