@@ -1,7 +1,6 @@
 # So far only found ActiveAttr, https://github.com/cgriego/active_attr 
 # work nicely with SimpleForm :(
 # Reform https://github.com/apotonick/reform looks pretty interesting too.
-
 class SearchForm
   include ActiveAttr::TypecastedAttributes
   include ActiveAttr::BasicModel
