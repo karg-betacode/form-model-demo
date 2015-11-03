@@ -1,0 +1,16 @@
+.container
+  .row
+    .col-md-12
+      h1 Search version 2
+      #search-box
+        = simple_form_for @form, url: search_search_v2_path, method: :get do |f|
+          = f.input :keywords
+          = f.input :image_only, as: :boolean, label: "Image only?"
+          = f.submit "Search"
+
+  - if @form.valid_search?
+    .row
+      .col-md-12
+        #result.gap
+          .panel.panel-default
+            p = raw(@form.search_summary)
