@@ -17,9 +17,9 @@ class SearchForm
 
   def search_summary
     if image_only
-      "You searched for <strong>#{keywords}</strong> limited to <strong>images</strong>"
+      "You searched for <strong>#{keywords}</strong> limited to <strong>images</strong>".html_safe
     else
-      "You searched for <strong>#{keywords}</strong>"
+      "You searched for <strong>#{keywords}</strong>".html_safe
     end
   end
 
